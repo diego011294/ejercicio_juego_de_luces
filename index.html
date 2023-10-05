@@ -4,16 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego de Luces</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <h1>Juego Luces - Diego Garcia Rocha </h1>
-    <div id="gameBoard"></div>
+    <div class="board">
+        <!-- Generar el tablero de 6x5 con botones -->
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+    </div>
     <div id="info">
-        <div>
+        <div id="infoAttempts">
             <p>Número de intentos: <span id="attempts">0</span></p>
             <p>Tiempo transcurrido: <span id="timer">0</span> segundos</p>
         </div>
-        <div>
+        <div id="infoDifficulty">
             <fieldset>
                 <legend>Nivel de dificultad</legend>
                     <input type="radio" name="difficulty" value="easy"> Fácil
@@ -24,14 +67,16 @@
             <fieldset>
                 <legend>Numero de luces</legend>
                     <label for="text">Filas</label>
-                    <input type="text" id="customRows">
+                    <input type="text" maxlength="5" size="5" id="customRows">
                     <label for="text">Columnas</label>
-                    <input type="text" id="customcols">
+                    <input type="text" maxlength="5" size="5" id="customcols">
                     <label for="text">Luces</label>
-                    <input type="text" id="customlights">
+                    <input type="text" maxlength="5" size="5" id="customlights">
             </fieldset>
         </div>
         <button id="select">Seleccionar</button>
     </div>
+
+    <script src="./js/juego_luces.js"></script>
 </body>
 </html>
