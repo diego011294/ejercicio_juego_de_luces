@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Luces</title>
+</head>
+<body>
+    <h1>Juego Luces - Diego Garcia Rocha </h1>
+    <div id="gameBoard"></div>
+    <div id="info">
+        <div>
+            <p>Número de intentos: <span id="attempts">0</span></p>
+            <p>Tiempo transcurrido: <span id="timer">0</span> segundos</p>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Nivel de dificultad</legend>
+                    <input type="radio" name="difficulty" value="easy"> Fácil
+                    <input type="radio" name="difficulty" value="medium"> Medio
+                    <input type="radio" name="difficulty" value="hard"> Dificíl
+                    <input type="radio" name="difficulty" value="custom"> Personalizado
+            </fieldset>
+            <fieldset>
+                <legend>Numero de luces</legend>
+                    <label for="text">Filas</label>
+                    <input type="text" id="customRows">
+                    <label for="text">Columnas</label>
+                    <input type="text" id="customcols">
+                    <label for="text">Luces</label>
+                    <input type="text" id="customlights">
+            </fieldset>
+        </div>
+        <button id="select">Seleccionar</button>
+    </div>
+</body>
+</html>
