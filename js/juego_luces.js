@@ -125,3 +125,14 @@ document.getElementById("iniciarJuego").addEventListener("click", () => {
     //CREAR UN NUEVO TABLERO
     crearTablero();
 });
+
+//FUNCION PARA ACTUALIZAR EL CONTADOR DE TIEMPO CADA SEGUNDO
+setInterval(() => {
+    if (!juegoTerminado) {
+        tiempo++;
+        document.getElementById("tiempo").textContent = tiempo + " segundos";
+    }
+}, 1000);
+
+//INICIAR EL JUEGO CON LA DIFICULTAD PREDETERMINADA AL CARGAR LA PÁGINA
+crearTablero();
