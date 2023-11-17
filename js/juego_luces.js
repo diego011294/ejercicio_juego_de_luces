@@ -61,3 +61,11 @@ function cambiarEstadoVentana(fila, columna) {
         }
     });
 }
+
+
+//FUNCION PARA ACTUALIZAR EL CONTADOR DE INTENTOS
+function actualizarIntentos() {
+    intentos++;
+    document.getElementById("intentos").textContent = intentos;
+}
+
