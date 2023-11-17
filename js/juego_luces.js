@@ -81,5 +81,47 @@ function generarLucesAleatorias() {
         botonesAleatorios.push(botonAleatorio);
         cambiarEstadoVentana(Math.floor(botonAleatorio / columnas), botonAleatorio % columnas);
     }
-
 }
+
+//FUNCIÓN PARA INICIAR EL JUEGO CON LA DIFICULTAD SELECCIONADA
+document.getElementById("iniciarJuego").addEventListener("click", () => {
+    //REINICIAR VARIABLES
+    intentos = 0;
+    tiempo = 0;
+    juegoTerminado = false;
+    document.getElementById("intentos").textContent = intentos;
+    document.getElementById("tiempo").textContent = tiempo;
+
+    //OBTENER LA DIFICULTAD SELECCIONADA
+    const dificultadSeleccionada = document.querySelector("input[name='dificultad']:checked").value;
+    if (dificultadSeleccionada === "facil") {
+        filas = 5;
+        columnas = 6;
+        lucesIniciales = 10;
+    } else if (dificultadSeleccionada === "medio") {
+        filas = 6;
+        columnas = 6;
+        lucesIniciales = 6;
+    } else if (dificultadSeleccionada === "dificil") {
+        filas = 10;
+        columnas = 10;
+        lucesIniciales = 20;
+    } else if (dificultadSeleccionada === "personalizado") {
+        const filasPersonalizadas = parseInt(document.getElementById("filas").value);
+        const columnasPersonalizadas = parseInt(document.getElementById("columnas").value);
+        const lucesPersonalizadas = parseInt(document.getElementById("luces").value);
+
+        //VALIDAR ENTRADAS PERSONALIZADAS
+        if (!Number.isNaN(filasPersonalizadas) && !Number.isNaN(columnasPersonalizadas) && !Number.isNaN(lucesPersonalizadas) && lucesPersonalizadas <= filasPersonalizadas * columnasPersonalizadas) {
+            filas = filasPersonalizadas;
+            columnas = columnasPersonalizadas;
+            lucesIniciales = lucesPersonalizadas;
+        } else {
+            alert("Por favor, ingrese valores válidos para filas, columnas y luces personalizadas.");
+            return;
+        }
+    }
+
+    //CREAR UN NUEVO TABLERO
+    crearTablero();
+});
