@@ -69,3 +69,17 @@ function actualizarIntentos() {
     document.getElementById("intentos").textContent = intentos;
 }
 
+//FUNCION PARA GENERAR LUCES ALEATORIAS 
+function generarLucesAleatorias() {
+    const botones = document.getElementsByTagName(".boton");
+    const botonesAleatorios = [];
+    for (let i = 0; i < lucesIniciales; i++) {
+        let botonAleatorio;
+        do {
+            botonAleatorio = Math.floor(Math.random() * (filas * columnas));
+        } while (botonesAleatorios.includes(botonAleatorio));
+        botonesAleatorios.push(botonAleatorio);
+        cambiarEstadoVentana(Math.floor(botonAleatorio / columnas), botonAleatorio % columnas);
+    }
+
+}
