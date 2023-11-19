@@ -136,3 +136,23 @@ setInterval(() => {
 
 //INICIAR EL JUEGO CON LA DIFICULTAD PREDETERMINADA AL CARGAR LA PÁGINA
 crearTablero();
+
+//FUNCION PARA SIMULAR UN TIEMPO DE CARGA INICIAL.
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function () {
+        var loaders = document.querySelectorAll('#loader-wrapper');
+        loaders.forEach(function (loader) {
+            loader.style.opacity = '0';
+            setTimeout(function () {
+                loader.style.display = 'none';
+            }, 500);
+        });
+
+        var contents = document.querySelectorAll('.contenedor');
+        contents.forEach(function (contenedor) {
+            contenedor.style.transition = 'opacity 1s ease-in-out';
+            contenedor.style.opacity = '1';
+            contenedor.style.visibility = 'visible';
+        });
+    }, 3000);
+});

@@ -1,44 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=News+Cycle&family=Pacifico&family=Titan+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,200&display=swap" rel="stylesheet">    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mansalva&family=News+Cycle&family=Pacifico&family=Titan+One&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,200&display=swap" rel="stylesheet">
     <title>Juego de Luces</title>
 </head>
+
 <body>
+
+    <div id="loader-wrapper">
+        <div id="loader">
+        </div>
+        <div id="textoCarga">
+            <p>"Encendiendo y apagando luces..." <br> Diviertete &#128516;</p>
+        </div>
+    </div>
+
     <div class="logo">
         <img src="/img/Logo2.png" alt="logo">
     </div>
 
 
-<div class="contenedor">
+    <div class="contenedor">
 
-    <div class="contador">
-        <h2 id="titulo2">Contador</h2>
-        <p>Intentos: <span id="intentos">0</span></p>
-        <p>Tiempo transcurrido: <span id="tiempo">0</span></p>
+        <div class="contador">
+            <h2 id="titulo2">Contador</h2>
+            <p>Intentos: <span id="intentos">0</span></p>
+            <p>Tiempo transcurrido: <span id="tiempo">0</span></p>
+        </div>
+
+
+        <div id="tablero"></div>
+
+        <div class="modo">
+            <h2 id="titulo">Dificultad</h2>
+            <input type="radio" name="dificultad" value="facil" checked> Fácil
+            <input type="radio" name="dificultad" value="medio"> Medio
+            <input type="radio" name="dificultad" value="dificil"> Difícil
+            <input type="radio" name="dificultad" value="personalizado"> Personalizado
+            <input type="text" id="filas" placeholder="Filas">
+            <input type="text" id="columnas" placeholder="Columnas">
+            <input type="text" id="luces" placeholder="Luces">
+            <button id="iniciarJuego"><svg id="icono" xmlns="http://www.w3.org/2000/svg" height="1em"
+                    viewBox="0 0 384 512">
+                    <path
+                        d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+                </svg></button>
+        </div>
     </div>
-
-
-    <div id="tablero"></div>
-
-    <div class="modo">
-        <h2 id="titulo">Dificultad</h2>
-        <input type="radio" name="dificultad" value="facil" checked> Fácil
-        <input type="radio" name="dificultad" value="medio" > Medio        
-        <input type="radio" name="dificultad" value="dificil" > Difícil 
-        <input type="radio" name="dificultad" value="personalizado" > Personalizado
-        <input type="text" id="filas" placeholder="Filas">       
-        <input type="text" id="columnas" placeholder="Columnas">
-        <input type="text" id="luces" placeholder="Luces">
-        <button id="iniciarJuego"><svg id="icono" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></button>
-    </div>     
-</div>
 
     <script src="../js/juego_luces.js"></script>
 
 </body>
+
 </html>
