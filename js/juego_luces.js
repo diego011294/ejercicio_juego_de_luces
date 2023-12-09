@@ -83,6 +83,18 @@ function generarLucesAleatorias() {
     }
 }
 
+//FUNCION PARA COMPROBAR QUE SE HA COMPLETADO EL JUEGO
+function verificarFindeJuego(){
+    const botones = document.querySelectorAll(".boton");
+    for (let i = 0; i < botones.length; i++) {
+        if(botones[i].style.backgroundColor !== "yellow"){
+            return;
+        }
+    }
+    juegoTerminado = true;
+    document.getElementById("tablero").innerHTML = '<img src="/img/Partida terminada.png" alt="Partida terminada">';
+}
+
 //FUNCIÓN PARA INICIAR EL JUEGO CON LA DIFICULTAD SELECCIONADA
 document.getElementById("iniciarJuego").addEventListener("click", () => {
     //REINICIAR VARIABLES
